@@ -11,24 +11,26 @@
   background-color: var(--light-bg);
   color: var(--text-color);
   font-family: "Roboto", sans-serif;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
 
   .main-content {
     flex: 1 0 auto;
     padding: 0;
-    min-height: calc(
-      100vh - 70px - 350px
-    ); /* Ajuste baseado no tamanho do header e footer */
+    min-height: calc(100vh - 70px - 350px);
     margin-top: 0;
     transition: padding 0.3s ease;
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
 
     @include md {
       padding: 0;
     }
 
     @include xs {
-      min-height: calc(
-        100vh - 60px - 300px
-      ); /* Ajustando para header e footer menores em mobile */
+      min-height: calc(100vh - 60px - 300px);
     }
   }
 }

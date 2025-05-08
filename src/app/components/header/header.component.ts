@@ -56,6 +56,14 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     // Adiciona ou remove a classe menu-open no body
     if (this.isMenuOpen) {
       this.renderer.addClass(this.document.body, "menu-open");
+
+      // Remover qualquer elemento menu-overlay que exista
+      const overlays = this.document.querySelectorAll(".menu-overlay");
+      overlays.forEach((overlay) => {
+        if (overlay.parentNode) {
+          overlay.parentNode.removeChild(overlay);
+        }
+      });
     } else {
       this.renderer.removeClass(this.document.body, "menu-open");
     }
@@ -132,6 +140,17 @@ export class HeaderComponent implements OnInit, AfterViewInit {
         this.cdr.markForCheck();
       }
     }
+  }
+
+  // Método específico para navegar e fechar o menu - nova solução
+  navigateToPage(route: string): void {
+    // Programar a navegação para ocorrer após o fechamento do menu
+    setTimeout(() => {
+      this.router.navigate([route]);
+    }, 100);
+
+    // Fechar o menu
+    this.closeMenu();
   }
 
   // Método para navegar para fragmentos específicos

@@ -1,10 +1,13 @@
 /* Importações */
 @use "./styles/variables" as *;
 
-/* Estilos globais adicionais */
+/* Regras globais para prevenção de overflow e responsividade */
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
+  width: 100%;
+  box-sizing: border-box;
 
   @include sm {
     font-size: 15px;
@@ -13,6 +16,17 @@ html {
   @include xs {
     font-size: 14px;
   }
+
+  @include xxs {
+    font-size: 13px;
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  max-width: 100%;
 }
 
 body {
@@ -22,8 +36,87 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw; /* Garantindo que o body não ultrapasse a largura da viewport */
+  position: relative;
 }
 
+/* Correções para tabelas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto;
+  display: block;
+  max-width: 100%;
+
+  @include md {
+    font-size: 0.9rem;
+  }
+
+  @include xs {
+    font-size: 0.8rem;
+  }
+}
+
+/* Correções para imagens */
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+}
+
+/* Correções para elementos que podem causar overflow */
+pre,
+code {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+/* Correções para containers e grids */
+.container,
+.grid,
+.flex,
+.row {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Correções para elementos inline */
+span,
+a,
+strong,
+em,
+b,
+i {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Melhoria para elementos de formulário */
+input,
+textarea,
+select,
+button {
+  max-width: 100%;
+
+  @include xs {
+    font-size: 16px; /* Previne zoom no iOS */
+  }
+}
+
+/* Estilos globais adicionais */
 h1,
 h2,
 h3,
@@ -103,13 +196,6 @@ a {
   &:hover {
     color: var(--primary-dark);
   }
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  border-radius: var(--border-radius);
 }
 
 section {

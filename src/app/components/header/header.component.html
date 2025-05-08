@@ -44,56 +44,33 @@
   </div>
 </div>
 
-<!-- Overlay para quando o menu está aberto -->
-<div
-  class="menu-overlay"
-  [class.active]="isMenuOpen"
-  (click)="closeMenu()"
-></div>
-
 <header>
   <div class="container header-container">
+    <!-- Logo -->
     <div class="logo">
       <a routerLink="/">
-        <span>Igreja Presbiteriana de Macaé</span>
+        <span class="full-title">Igreja Presbiteriana de Macaé</span>
+        <span class="short-title">IP Macaé</span>
       </a>
     </div>
 
-    <!-- Botão de menu hamburger visível apenas em mobile -->
-    <button
-      class="menu-hamburger"
-      (click)="toggleMenu()"
-      [class.active]="isMenuOpen"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
+    <!-- Menu de navegação desktop -->
     <nav class="main-nav">
-      <ul class="nav-links" [class.active]="isMenuOpen">
+      <ul class="nav-links">
         <li>
           <a
             routerLink="/"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
-            (click)="closeMenu()"
           >
             Início
           </a>
         </li>
         <li>
-          <a routerLink="/sobre" routerLinkActive="active" (click)="closeMenu()"
-            >Sobre</a
-          >
+          <a routerLink="/sobre" routerLinkActive="active">Sobre</a>
         </li>
         <li>
-          <a
-            routerLink="/pastor"
-            routerLinkActive="active"
-            (click)="closeMenu()"
-            >Pastor</a
-          >
+          <a routerLink="/pastor" routerLinkActive="active">Pastor</a>
         </li>
         <li>
           <a
@@ -106,26 +83,17 @@
           </a>
           <ul class="submenu" [class.active]="activeDropdown === 'reforma'">
             <li>
-              <a
-                routerLink="/calvino"
-                routerLinkActive="active"
-                (click)="closeMenu()"
+              <a routerLink="/calvino" routerLinkActive="active"
                 >João Calvino</a
               >
             </li>
             <li>
-              <a
-                routerLink="/lutero"
-                routerLinkActive="active"
-                (click)="closeMenu()"
+              <a routerLink="/lutero" routerLinkActive="active"
                 >Martinho Lutero</a
               >
             </li>
             <li>
-              <a
-                routerLink="/ashbel"
-                routerLinkActive="active"
-                (click)="closeMenu()"
+              <a routerLink="/ashbel" routerLinkActive="active"
                 >Ashbel G. Simonton</a
               >
             </li>
@@ -149,23 +117,124 @@
           >
         </li>
         <li>
-          <a
-            routerLink="/escalas"
-            routerLinkActive="active"
-            (click)="closeMenu()"
-            >Escalas</a
-          >
+          <a routerLink="/escalas" routerLinkActive="active">Escalas</a>
         </li>
         <li>
-          <a
-            routerLink="/login"
-            routerLinkActive="active"
-            class="login-link"
-            (click)="closeMenu()"
+          <a routerLink="/login" routerLinkActive="active" class="login-link"
             >Login</a
           >
         </li>
       </ul>
     </nav>
+
+    <!-- Botão do menu mobile -->
+    <button
+      class="menu-hamburger"
+      (click)="toggleMenu()"
+      [class.active]="isMenuOpen"
+      aria-label="Menu principal"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Menu de navegação mobile -->
+    <div class="navigation-wrapper" [class.active]="isMenuOpen">
+      <nav>
+        <ul class="nav-links">
+          <li>
+            <a
+              (click)="navigateToPage('/')"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              Início
+            </a>
+          </li>
+          <li>
+            <a (click)="navigateToPage('/sobre')" routerLinkActive="active">
+              Sobre
+            </a>
+          </li>
+          <li>
+            <a (click)="navigateToPage('/pastor')" routerLinkActive="active">
+              Pastor
+            </a>
+          </li>
+          <li>
+            <a
+              class="dropdown-toggle"
+              (click)="toggleDropdown($event, 'reforma')"
+              [attr.aria-expanded]="activeDropdown === 'reforma'"
+            >
+              Reforma
+              <i class="fas fa-chevron-down"></i>
+            </a>
+            <ul class="submenu" [class.active]="activeDropdown === 'reforma'">
+              <li>
+                <a
+                  (click)="navigateToPage('/calvino')"
+                  routerLinkActive="active"
+                >
+                  João Calvino
+                </a>
+              </li>
+              <li>
+                <a
+                  (click)="navigateToPage('/lutero')"
+                  routerLinkActive="active"
+                >
+                  Martinho Lutero
+                </a>
+              </li>
+              <li>
+                <a
+                  (click)="navigateToPage('/ashbel')"
+                  routerLinkActive="active"
+                >
+                  Ashbel G. Simonton
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a (click)="navigateToFragment('agenda')" class="fragment-link">
+              Agenda
+            </a>
+          </li>
+          <li>
+            <a
+              (click)="navigateToFragment('localizacao')"
+              class="fragment-link"
+            >
+              Localização
+            </a>
+          </li>
+          <li>
+            <a
+              (click)="navigateToFragment('dizimos-ofertas')"
+              class="fragment-link"
+            >
+              Contribuição
+            </a>
+          </li>
+          <li>
+            <a (click)="navigateToPage('/escalas')" routerLinkActive="active">
+              Escalas
+            </a>
+          </li>
+          <li>
+            <a
+              (click)="navigateToPage('/login')"
+              routerLinkActive="active"
+              class="login-link"
+            >
+              Login
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </header>
