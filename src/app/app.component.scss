@@ -24,6 +24,12 @@
     @include md {
       padding: 0;
     }
+
+    @include xs {
+      min-height: calc(
+        100vh - 60px - 300px
+      ); /* Ajustando para header e footer menores em mobile */
+    }
   }
 }
 
@@ -65,5 +71,23 @@
 @include sm {
   .container {
     padding: 0 var(--space-xs);
+  }
+}
+
+/* Responsividade para dispositivos muito pequenos */
+@include xs {
+  .container {
+    padding: 0 var(--space-xs);
+  }
+
+  .section {
+    padding: var(--space-sm) 0;
+  }
+}
+
+/* Dispositivos extremamente pequenos */
+@media (max-width: 360px) {
+  .container {
+    padding: 0 8px;
   }
 }

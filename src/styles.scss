@@ -9,6 +9,10 @@ html {
   @include sm {
     font-size: 15px;
   }
+
+  @include xs {
+    font-size: 14px;
+  }
 }
 
 body {
@@ -43,6 +47,11 @@ h1 {
   @include sm {
     font-size: 1.875rem;
   }
+
+  @include xs {
+    font-size: 1.7rem;
+    margin-bottom: var(--space-sm);
+  }
 }
 
 h2 {
@@ -56,6 +65,10 @@ h2 {
   @include sm {
     font-size: 1.5rem;
   }
+
+  @include xs {
+    font-size: 1.4rem;
+  }
 }
 
 h3 {
@@ -68,6 +81,10 @@ h3 {
 
   @include sm {
     font-size: 1.25rem;
+  }
+
+  @include xs {
+    font-size: 1.2rem;
   }
 }
 
@@ -100,6 +117,14 @@ section {
 
   @include sm {
     padding: var(--space-lg) 0;
+  }
+
+  @include xs {
+    padding: var(--space-md) 0;
+  }
+
+  @media (max-width: 360px) {
+    padding: var(--space-sm) 0;
   }
 }
 
@@ -213,6 +238,11 @@ section {
     padding: 0.5rem 1.25rem;
     font-size: 0.9375rem;
   }
+
+  @media (max-width: 360px) {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
 }
 
 .btn-primary {
@@ -253,6 +283,10 @@ section {
 .grid {
   display: grid;
   gap: var(--space-md);
+
+  @include xs {
+    gap: var(--space-sm);
+  }
 }
 
 .grid-2 {
@@ -309,6 +343,10 @@ section {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+
+  @include xs {
+    padding: var(--space-sm);
+  }
 }
 
 .section-title {
@@ -340,6 +378,11 @@ section {
   @include sm {
     font-size: 1rem;
     margin-bottom: var(--space-md);
+  }
+
+  @include xs {
+    font-size: 0.95rem;
+    margin-bottom: var(--space-sm);
   }
 }
 

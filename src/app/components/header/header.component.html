@@ -44,6 +44,13 @@
   </div>
 </div>
 
+<!-- Overlay para quando o menu está aberto -->
+<div
+  class="menu-overlay"
+  [class.active]="isMenuOpen"
+  (click)="closeMenu()"
+></div>
+
 <header>
   <div class="container header-container">
     <div class="logo">
@@ -51,29 +58,43 @@
         <span>Igreja Presbiteriana de Macaé</span>
       </a>
     </div>
+
+    <!-- Botão de menu hamburger visível apenas em mobile -->
+    <button
+      class="menu-hamburger"
+      (click)="toggleMenu()"
+      [class.active]="isMenuOpen"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
     <nav class="main-nav">
-      <button
-        class="mobile-menu-toggle"
-        (click)="toggleMenu()"
-        [class.active]="isMenuOpen"
-        aria-label="Abrir menu"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
       <ul class="nav-links" [class.active]="isMenuOpen">
         <li>
           <a
             routerLink="/"
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
+            (click)="closeMenu()"
           >
             Início
           </a>
         </li>
-        <li><a routerLink="/sobre" routerLinkActive="active">Sobre</a></li>
-        <li><a routerLink="/pastor" routerLinkActive="active">Pastor</a></li>
+        <li>
+          <a routerLink="/sobre" routerLinkActive="active" (click)="closeMenu()"
+            >Sobre</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/pastor"
+            routerLinkActive="active"
+            (click)="closeMenu()"
+            >Pastor</a
+          >
+        </li>
         <li>
           <a
             class="dropdown-toggle"
@@ -85,17 +106,26 @@
           </a>
           <ul class="submenu" [class.active]="activeDropdown === 'reforma'">
             <li>
-              <a routerLink="/calvino" routerLinkActive="active"
+              <a
+                routerLink="/calvino"
+                routerLinkActive="active"
+                (click)="closeMenu()"
                 >João Calvino</a
               >
             </li>
             <li>
-              <a routerLink="/lutero" routerLinkActive="active"
+              <a
+                routerLink="/lutero"
+                routerLinkActive="active"
+                (click)="closeMenu()"
                 >Martinho Lutero</a
               >
             </li>
             <li>
-              <a routerLink="/ashbel" routerLinkActive="active"
+              <a
+                routerLink="/ashbel"
+                routerLinkActive="active"
+                (click)="closeMenu()"
                 >Ashbel G. Simonton</a
               >
             </li>
@@ -118,9 +148,20 @@
             >Contribuição</a
           >
         </li>
-        <li><a routerLink="/escalas" routerLinkActive="active">Escalas</a></li>
         <li>
-          <a routerLink="/login" routerLinkActive="active" class="login-link"
+          <a
+            routerLink="/escalas"
+            routerLinkActive="active"
+            (click)="closeMenu()"
+            >Escalas</a
+          >
+        </li>
+        <li>
+          <a
+            routerLink="/login"
+            routerLinkActive="active"
+            class="login-link"
+            (click)="closeMenu()"
             >Login</a
           >
         </li>
