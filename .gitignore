@@ -1,0 +1,34 @@
+# Dependências
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# Arquivos de build
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Angular cache
+/.angular
+
+# Arquivos de IDE
+/.idea
+/.vscode
+/.history
+/*.sublime-workspace
+
+# Arquivos de configuração local
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log

@@ -1,0 +1,193 @@
+<div class="figura-page">
+  <!-- Banner da página -->
+  <section class="figura-banner">
+    <div class="container">
+      <h1>Martinho Lutero</h1>
+      <p class="subtitle">
+        O monge que mudou o curso da história com suas 95 teses
+      </p>
+    </div>
+  </section>
+
+  <!-- Seção Principal - Biografia -->
+  <section class="figura-principal">
+    <div class="container">
+      <div class="figura-content">
+        <div class="figura-image">
+          <img
+            src="assets/imagens/martinho lutero.svg"
+            alt="Martinho Lutero"
+            loading="lazy"
+          />
+        </div>
+        <div class="figura-text">
+          <h2>O Pai da Reforma Protestante</h2>
+          <p>
+            Martinho Lutero (1483-1546) foi um monge agostiniano alemão, teólogo
+            e professor universitário que se tornou uma figura central na
+            Reforma Protestante. Nascido em Eisleben, Alemanha, Lutero iniciou
+            um movimento que transformou fundamentalmente a Igreja Cristã e a
+            cultura europeia.
+          </p>
+          <p>
+            Sua busca por uma relação justa com Deus o levou a questionar
+            práticas da Igreja Católica, especialmente a venda de indulgências.
+            Em 31 de outubro de 1517, Lutero afixou suas famosas 95 teses na
+            porta da Igreja do Castelo de Wittenberg, desencadeando um debate
+            teológico que rapidamente se espalhou por toda a Europa.
+          </p>
+          <p>
+            A ênfase de Lutero na autoridade das Escrituras, na justificação
+            pela fé e no sacerdócio de todos os crentes revolucionou o
+            pensamento religioso e estabeleceu os princípios fundamentais do
+            protestantismo que perduram até hoje.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="timeline-section">
+    <div class="container">
+      <h2 class="section-title">A Vida de Martinho Lutero</h2>
+      <p class="section-description">
+        Uma jornada que mudou o curso da história religiosa
+      </p>
+
+      <div class="timeline">
+        <div class="timeline-item" *ngFor="let event of timelineEvents">
+          <div class="timeline-marker">{{ event.year }}</div>
+          <div class="timeline-content">
+            <h3>{{ event.title }}</h3>
+            <p>{{ event.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Histórico -->
+  <section class="local-historico">
+    <div class="container">
+      <h2 class="section-title">Castelo de Wartburg</h2>
+      <p class="section-description">
+        O refúgio onde Lutero traduziu o Novo Testamento
+      </p>
+
+      <div class="local-grid">
+        <div class="local-imagem">
+          <img
+            src="assets/imagens/Castelo de Wartburg .jpg"
+            alt="Castelo de Wartburg"
+            loading="lazy"
+          />
+        </div>
+        <div class="local-texto">
+          <h2>Um Esconderijo Providencial</h2>
+          <p>
+            O Castelo de Wartburg, localizado próximo a Eisenach na Alemanha,
+            serviu como refúgio para Martinho Lutero de maio de 1521 a março de
+            1522, após ser declarado herege e proscrito pelo Edito de Worms.
+          </p>
+          <p>
+            Neste castelo medieval, sob a proteção do príncipe Frederico, o
+            Sábio, da Saxônia, Lutero se disfarçou como "Junker Jörg" (Cavaleiro
+            Jorge) e realizou uma de suas obras mais importantes: a tradução do
+            Novo Testamento do grego para o alemão em apenas 11 semanas.
+          </p>
+          <p>
+            Esta tradução revolucionária não apenas tornou as Escrituras
+            acessíveis ao povo comum alemão, mas também ajudou a padronizar o
+            idioma alemão moderno e a promover a alfabetização. Hoje, o Castelo
+            de Wartburg é um Patrimônio Mundial da UNESCO e um importante local
+            de peregrinação para protestantes de todo o mundo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Legado -->
+  <section class="legado-section">
+    <div class="container">
+      <h2 class="section-title">O Legado de Lutero</h2>
+      <p class="section-description">
+        Contribuições que transformaram a igreja e a sociedade
+      </p>
+
+      <div class="legado-grid">
+        <div class="legado-item" *ngFor="let item of legados">
+          <div class="legado-icon">
+            <i [class]="item.icon"></i>
+          </div>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Citação -->
+  <section class="quote-section">
+    <div class="container">
+      <blockquote>
+        "Aqui estou. Não posso fazer diferente. Que Deus me ajude. Amém."
+        <cite>- Martinho Lutero na Dieta de Worms, 1521</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Princípios da Reforma -->
+  <section class="denominacoes-section">
+    <div class="container">
+      <h2 class="section-title">Os Cinco Solas da Reforma</h2>
+      <p class="section-description">
+        Princípios fundamentais que definiram o movimento protestante
+      </p>
+
+      <div class="denominacoes-grid">
+        <div class="denominacao-item" *ngFor="let principio of principios">
+          <h3>{{ principio.titulo }}</h3>
+          <p>{{ principio.descricao }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curiosidades -->
+  <section class="curiosidades-section">
+    <div class="container">
+      <h2 class="section-title">Curiosidades sobre Lutero</h2>
+      <p class="section-description">
+        Fatos interessantes sobre o grande reformador
+      </p>
+
+      <div class="curiosidades-lista">
+        <div
+          class="curiosidade-item"
+          *ngFor="let curiosidade of curiosidades; let i = index"
+        >
+          <div class="numero">{{ i + 1 }}</div>
+          <div class="curiosidade-content">
+            <h3>{{ curiosidade.title }}</h3>
+            <p>{{ curiosidade.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Soli Deo Gloria -->
+  <section class="soli-section">
+    <div class="container">
+      <h2 class="section-title">O Legado Continua</h2>
+      <p class="section-description">
+        O impacto da Reforma Protestante iniciada por Lutero continua a
+        influenciar a teologia, cultura e sociedade até os dias atuais,
+        lembrando-nos da importância de um retorno constante às Escrituras e à
+        graça de Deus revelada em Jesus Cristo.
+      </p>
+    </div>
+  </section>
+</div>

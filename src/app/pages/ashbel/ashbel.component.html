@@ -1,0 +1,161 @@
+<div class="figura-page">
+  <!-- Banner da página -->
+  <section class="figura-banner">
+    <div class="container">
+      <h1>Ashbel Green Simonton</h1>
+      <p class="subtitle">O pioneiro do presbiterianismo no Brasil</p>
+    </div>
+  </section>
+
+  <!-- Seção Principal - Biografia -->
+  <section class="figura-principal">
+    <div class="container">
+      <div class="figura-content">
+        <div class="figura-image">
+          <img
+            src="assets/imagens/Ashbel Green Simonton.svg"
+            alt="Ashbel Green Simonton"
+            loading="lazy"
+          />
+        </div>
+        <div class="figura-text">
+          <h2>O Missionário Fundador</h2>
+          <p>
+            Ashbel Green Simonton (1833-1867) foi o pioneiro da Igreja Presbiteriana no Brasil.
+            Nascido na Pensilvânia, Estados Unidos, formou-se em Princeton e, atendendo ao chamado
+            missionário, chegou ao Rio de Janeiro em 12 de agosto de 1859.
+          </p>
+          <p>
+            Em apenas oito anos de ministério no Brasil, Simonton conseguiu estabelecer as bases
+            sólidas do presbiterianismo no país. Aprendeu português com rapidez notável, fundou a
+            primeira igreja presbiteriana no Rio de Janeiro, estabeleceu o primeiro jornal
+            evangélico do país ("Imprensa Evangélica") e formou os primeiros líderes nacionais.
+          </p>
+          <p>
+            Apesar de sua morte prematura aos 34 anos, vítima de febre amarela, seu legado é imenso.
+            Sua visão, dedicação e adaptabilidade cultural foram fundamentais para o sucesso da
+            implantação do presbiterianismo em solo brasileiro, que hoje é uma das maiores
+            denominações protestantes históricas do país.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="timeline-section">
+    <div class="container">
+      <h2 class="section-title">A Jornada Missionária de Simonton</h2>
+      <p class="section-description">Oito anos que transformaram a história religiosa do Brasil</p>
+
+      <div class="timeline">
+        <div class="timeline-item" *ngFor="let event of timelineEvents">
+          <div class="timeline-marker">{{ event.year }}</div>
+          <div class="timeline-content">
+            <h3>{{ event.title }}</h3>
+            <p>{{ event.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Citação -->
+  <section class="quote-section">
+    <div class="container">
+      <blockquote>
+        "Tenho sido grandemente abençoado em meu trabalho. Deus tem estado comigo e com o meu
+        trabalho. Desejo honrá-lo, não a mim mesmo."
+        <cite>- Ashbel Green Simonton em seu diário</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Legado -->
+  <section class="legado-section">
+    <div class="container">
+      <h2 class="section-title">O Legado de Simonton</h2>
+      <p class="section-description">Contribuições duradouras para o protestantismo brasileiro</p>
+
+      <div class="legado-grid">
+        <div class="legado-item" *ngFor="let item of legados">
+          <div class="legado-icon">
+            <i [class]="item.icon"></i>
+          </div>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Igreja Presbiteriana do Brasil -->
+  <section class="denominacoes-section">
+    <div class="container">
+      <h2 class="section-title">A Igreja Presbiteriana do Brasil</h2>
+      <p class="section-description">
+        A denominação que cresceu a partir do trabalho pioneiro de Simonton
+      </p>
+
+      <div class="denominacoes-grid">
+        <div class="denominacao-item">
+          <h3>Fundação e Crescimento</h3>
+          <p>
+            A Igreja Presbiteriana do Brasil cresceu a partir da pequena congregação fundada por
+            Simonton no Rio de Janeiro em 1862, espalhando-se por todo o território nacional.
+          </p>
+        </div>
+        <div class="denominacao-item">
+          <h3>Organização Conciliar</h3>
+          <p>
+            Seguindo o modelo presbiteriano trazido por Simonton, a denominação se organiza de forma
+            conciliar, com conselhos, presbitérios, sínodos e supremo concílio.
+          </p>
+        </div>
+        <div class="denominacao-item">
+          <h3>Confessionalidade</h3>
+          <p>
+            Mantém como base doutrinária a Confissão de Fé de Westminster, o Catecismo Maior e o
+            Breve Catecismo, promovendo a fé reformada no contexto brasileiro.
+          </p>
+        </div>
+        <div class="denominacao-item">
+          <h3>Missão Educacional</h3>
+          <p>
+            Seguindo o exemplo de Simonton, a IPB investiu fortemente em educação, fundando escolas,
+            universidades e seminários teológicos por todo o Brasil.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curiosidades -->
+  <section class="curiosidades-section">
+    <div class="container">
+      <h2 class="section-title">Curiosidades sobre Simonton</h2>
+      <p class="section-description">Fatos interessantes sobre o pioneiro presbiteriano</p>
+
+      <div class="curiosidades-lista">
+        <div class="curiosidade-item" *ngFor="let curiosidade of curiosidades; let i = index">
+          <div class="numero">{{ i + 1 }}</div>
+          <div class="curiosidade-content">
+            <p>{{ curiosidade }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Soli Deo Gloria -->
+  <section class="soli-section">
+    <div class="container">
+      <h2 class="section-title">Soli Deo Gloria</h2>
+      <p class="section-description">
+        O lema que guiou Simonton em sua breve mas frutífera missão no Brasil continua inspirando
+        presbiterianos até hoje: "Para a Glória de Deus Somente". Seu legado nos lembra que mesmo
+        uma vida breve, quando dedicada a Deus, pode ter impacto eterno.
+      </p>
+    </div>
+  </section>
+</div>

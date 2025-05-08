@@ -1,0 +1,162 @@
+<div class="figura-page">
+  <!-- Banner da página -->
+  <section class="figura-banner">
+    <div class="container">
+      <h1>João Calvino</h1>
+      <p class="subtitle">Teólogo, reformador e um dos principais pilares da Reforma Protestante</p>
+    </div>
+  </section>
+
+  <!-- Seção Principal - Biografia -->
+  <section class="figura-principal">
+    <div class="container">
+      <div class="figura-content">
+        <div class="figura-image">
+          <img src="assets/imagens/João Calvino.svg" alt="João Calvino" loading="lazy" />
+        </div>
+        <div class="figura-text">
+          <h2>O Reformador de Genebra</h2>
+          <p>
+            João Calvino (1509-1564) foi um teólogo francês, pastor e reformador durante a Reforma
+            Protestante. Nascido em Noyon, França, Calvino desenvolveu uma teologia que enfatizava a
+            soberania de Deus e uma abordagem sistemática às Escrituras.
+          </p>
+          <p>
+            Inicialmente formado em direito e humanidades, Calvino experimentou uma "conversão
+            súbita" que o levou a abandonar o catolicismo romano. Após fugir da perseguição
+            religiosa na França, acabou se estabelecendo em Genebra, onde implementou reformas
+            significativas na igreja e na sociedade.
+          </p>
+          <p>
+            Sua principal obra, "As Institutas da Religião Cristã", é considerada uma obra-prima da
+            teologia sistemática protestante. Calvino também escreveu extensos comentários bíblicos
+            e influenciou profundamente o pensamento cristão, político e social.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="timeline-section">
+    <div class="container">
+      <h2 class="section-title">A Vida de João Calvino</h2>
+      <p class="section-description">Uma jornada de fé, perseverança e reforma</p>
+
+      <div class="timeline">
+        <div class="timeline-item" *ngFor="let event of timelineEvents">
+          <div class="timeline-marker">{{ event.year }}</div>
+          <div class="timeline-content">
+            <h3>{{ event.title }}</h3>
+            <p>{{ event.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Histórico -->
+  <section class="local-historico">
+    <div class="container">
+      <h2 class="section-title">Genebra: A Cidade da Reforma</h2>
+      <p class="section-description">O centro do movimento reformado sob a liderança de Calvino</p>
+
+      <div class="local-grid">
+        <div class="local-imagem">
+          <img src="assets/imagens/Genebra.jpg" alt="Genebra, Suíça" loading="lazy" />
+        </div>
+        <div class="local-texto">
+          <h2>A "Cidade Santa Protestante"</h2>
+          <p>
+            Genebra, Suíça, tornou-se o centro da Reforma Protestante sob a liderança de João
+            Calvino. Nesta cidade, Calvino implementou suas reformas religiosas e sociais,
+            transformando-a em um modelo de comunidade cristã reformada.
+          </p>
+          <p>
+            Em Genebra, Calvino estabeleceu um consistório para supervisionar a vida moral e
+            religiosa da cidade, fundou a Academia de Genebra (atualmente a Universidade de Genebra)
+            e enviou missionários treinados para toda a Europa.
+          </p>
+          <p>
+            A cidade serviu como refúgio para protestantes perseguidos de toda a Europa,
+            especialmente da França. Estes refugiados contribuíram para o dinamismo econômico e
+            intelectual de Genebra, que ficou conhecida como a "Roma Protestante" ou "Cidade Santa
+            Protestante".
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Legado -->
+  <section class="legado-section">
+    <div class="container">
+      <h2 class="section-title">O Legado de Calvino</h2>
+      <p class="section-description">Sua influência permanece viva séculos após sua morte</p>
+
+      <div class="legado-grid">
+        <div class="legado-item" *ngFor="let item of legados">
+          <div class="legado-icon">
+            <i [class]="item.icon"></i>
+          </div>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Citação -->
+  <section class="quote-section">
+    <div class="container">
+      <blockquote>
+        "Meu coração ofereço a Ti, Senhor, pronta e sinceramente."
+        <cite>- João Calvino</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Denominações -->
+  <section class="denominacoes-section">
+    <div class="container">
+      <h2 class="section-title">Denominações Influenciadas</h2>
+      <p class="section-description">Igrejas que seguem a tradição reformada calvinista</p>
+
+      <div class="denominacoes-grid">
+        <div class="denominacao-item" *ngFor="let denom of denominacoes">
+          <h3>{{ denom.name }}</h3>
+          <p>{{ denom.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curiosidades -->
+  <section class="curiosidades-section">
+    <div class="container">
+      <h2 class="section-title">Curiosidades sobre Calvino</h2>
+      <p class="section-description">Fatos interessantes sobre o reformador</p>
+
+      <div class="curiosidades-lista">
+        <div class="curiosidade-item" *ngFor="let curiosidade of curiosidades; let i = index">
+          <div class="numero">{{ i + 1 }}</div>
+          <div class="curiosidade-content">
+            <h3>{{ curiosidade.title }}</h3>
+            <p>{{ curiosidade.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Soli Deo Gloria -->
+  <section class="soli-section">
+    <div class="container">
+      <h2 class="section-title">Soli Deo Gloria</h2>
+      <p class="section-description">
+        "Somente a Deus a Glória" - Este foi o princípio norteador da vida e obra de João Calvino,
+        reconhecendo que todo o propósito da existência humana é glorificar a Deus.
+      </p>
+    </div>
+  </section>
+</div>

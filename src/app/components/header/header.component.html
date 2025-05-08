@@ -1,0 +1,130 @@
+<!-- Barra de próximos eventos no topo da página -->
+<div class="proximos-eventos">
+  <div class="container">
+    <div class="eventos-slider">
+      <div class="evento-item">
+        <div class="evento-icone">
+          <svg
+            viewBox="0 0 24 24"
+            width="16"
+            height="16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+        </div>
+        <span>Escola dominical - Domingo 9h</span>
+      </div>
+      <div class="evento-item">
+        <div class="evento-icone">
+          <svg
+            viewBox="0 0 24 24"
+            width="16"
+            height="16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+        </div>
+        <span>Culto de Adoração - Domingo 18h</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="container header-container">
+    <div class="logo">
+      <a routerLink="/">
+        <span>Igreja Presbiteriana de Macaé</span>
+      </a>
+    </div>
+    <nav class="main-nav">
+      <button
+        class="mobile-menu-toggle"
+        (click)="toggleMenu()"
+        [class.active]="isMenuOpen"
+        aria-label="Abrir menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" [class.active]="isMenuOpen">
+        <li>
+          <a
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            Início
+          </a>
+        </li>
+        <li><a routerLink="/sobre" routerLinkActive="active">Sobre</a></li>
+        <li><a routerLink="/pastor" routerLinkActive="active">Pastor</a></li>
+        <li>
+          <a
+            class="dropdown-toggle"
+            (click)="toggleDropdown($event, 'reforma')"
+            [attr.aria-expanded]="activeDropdown === 'reforma'"
+          >
+            Reforma
+            <i class="fas fa-chevron-down"></i>
+          </a>
+          <ul class="submenu" [class.active]="activeDropdown === 'reforma'">
+            <li>
+              <a routerLink="/calvino" routerLinkActive="active"
+                >João Calvino</a
+              >
+            </li>
+            <li>
+              <a routerLink="/lutero" routerLinkActive="active"
+                >Martinho Lutero</a
+              >
+            </li>
+            <li>
+              <a routerLink="/ashbel" routerLinkActive="active"
+                >Ashbel G. Simonton</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a (click)="navigateToFragment('agenda')" class="fragment-link"
+            >Agenda</a
+          >
+        </li>
+        <li>
+          <a (click)="navigateToFragment('localizacao')" class="fragment-link"
+            >Localização</a
+          >
+        </li>
+        <li>
+          <a
+            (click)="navigateToFragment('dizimos-ofertas')"
+            class="fragment-link"
+            >Contribuição</a
+          >
+        </li>
+        <li><a routerLink="/escalas" routerLinkActive="active">Escalas</a></li>
+        <li>
+          <a routerLink="/login" routerLinkActive="active" class="login-link"
+            >Login</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

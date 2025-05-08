@@ -1,0 +1,155 @@
+@use "../../../styles/variables" as *;
+
+/* Estilo do rodapé */
+footer {
+  background-color: var(--dark-bg);
+  color: var(--light-text);
+  padding-top: var(--space-xl);
+
+  @include md {
+    padding-top: var(--space-lg);
+  }
+
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+
+    @include lg {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include sm {
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+    }
+  }
+
+  .footer-section {
+    @include sm {
+      text-align: center;
+      margin-bottom: var(--space-md);
+    }
+
+    h3,
+    h4 {
+      color: var(--white);
+      margin-bottom: var(--space-sm);
+      font-size: 1.25rem;
+      position: relative;
+      padding-bottom: var(--space-xs);
+
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background-color: var(--primary-color);
+
+        @include sm {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+
+    p {
+      margin-bottom: var(--space-sm);
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.9375rem;
+    }
+
+    .footer-logo h3 {
+      font-size: 1.5rem;
+      margin-bottom: var(--space-sm);
+      padding-bottom: 0;
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  .footer-horarios {
+    p {
+      margin-bottom: var(--space-xs);
+
+      strong {
+        color: var(--white);
+        margin-right: var(--space-xs);
+      }
+    }
+  }
+
+  .footer-contact {
+    margin-bottom: var(--space-md);
+
+    p {
+      margin-bottom: var(--space-xs);
+      display: flex;
+      align-items: center;
+
+      @include sm {
+        justify-content: center;
+      }
+
+      strong {
+        color: var(--white);
+        min-width: 85px;
+        display: inline-block;
+      }
+    }
+  }
+
+  .footer-social {
+    h4 {
+      margin-bottom: var(--space-sm);
+    }
+
+    .social-icons {
+      display: flex;
+      gap: var(--space-sm);
+
+      @include sm {
+        justify-content: center;
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: var(--white);
+        transition: var(--transition);
+
+        &:hover {
+          background-color: var(--primary-color);
+          transform: translateY(-3px);
+        }
+
+        i {
+          font-size: 1.125rem;
+        }
+      }
+    }
+  }
+
+  .copyright {
+    margin-top: var(--space-lg);
+    padding: var(--space-md) 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    p {
+      margin-bottom: 0;
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+  }
+}

@@ -1,0 +1,112 @@
+<footer>
+  <div id="contato" class="container footer-container">
+    <!-- Seção 1: Logo e Sobre -->
+    <div class="footer-section">
+      <div class="footer-logo">
+        <h3>
+          Quarta Igreja
+          <br />
+          Presbiteriana de Macaé
+        </h3>
+      </div>
+      <p>
+        Uma comunidade de fé comprometida com a Palavra de Deus, adoração verdadeira e crescimento
+        espiritual, fundamentada nos princípios da Reforma Protestante.
+      </p>
+      <p><em>"Tudo para a glória de Deus" - 1 Coríntios 10:31</em></p>
+    </div>
+
+    <!-- Seção 2: Horários dos Cultos -->
+    <div class="footer-section">
+      <h4>Nossos Cultos</h4>
+      <div class="footer-horarios">
+        <p>
+          <strong>Culto Dominical:</strong>
+          Domingo às 10h e 18h
+        </p>
+        <p>
+          <strong>Escola Dominical:</strong>
+          Domingo às 9h
+        </p>
+        <p>
+          <strong>Estudo Bíblico:</strong>
+          Quarta às 19h30
+        </p>
+        <p>
+          <strong>Culto de Oração:</strong>
+          Sexta às 19h
+        </p>
+        <p>
+          <strong>Reunião de Jovens:</strong>
+          Sábado às 19h
+        </p>
+      </div>
+    </div>
+
+    <!-- Seção 3: Contato e Horários -->
+    <div class="footer-section">
+      <div class="footer-contact">
+        <h4>Contato</h4>
+        <p>
+          <strong>Endereço:</strong>
+          {{ contato.endereco }}
+        </p>
+        <p>
+          <strong>Telefone:</strong>
+          {{ contato.telefone }}
+        </p>
+        <p>
+          <strong>Email:</strong>
+          {{ contato.email }}
+        </p>
+      </div>
+
+      <div class="footer-social">
+        <h4>Redes Sociais</h4>
+        <div class="social-icons">
+          <a
+            [href]="redesSociais.facebook"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+          >
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a
+            [href]="redesSociais.instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            [href]="redesSociais.youtube"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube"
+          >
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a
+            [href]="redesSociais.whatsapp"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+          >
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="copyright">
+    <div class="container">
+      <p>
+        &copy; {{ currentYear }} Quarta Igreja Presbiteriana de Macaé. Todos os direitos reservados.
+      </p>
+    </div>
+  </div>
+</footer>
